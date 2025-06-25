@@ -4,13 +4,20 @@ form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 5px;
 }
 
 label {
   font-weight: 600;
 }
 
+input,
+textarea {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #0f0101;
+  background-color: #f0f0f0;
+}
 input[type="text"],
 textarea,
 input[type="file"] {

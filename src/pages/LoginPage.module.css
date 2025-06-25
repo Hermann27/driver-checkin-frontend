@@ -6,8 +6,6 @@
   padding: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-
-  box-shadow: 0 2px 8px rgba(228, 221, 221, 0.05);
 }
 
 .loginTitle {
@@ -15,6 +13,21 @@
   font-size: 1.7rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
+}
+
+.registerLink {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted-text);
+}
+
+.registerLink a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.registerLink a:hover {
+  color: var(--accent-hover);
 }
 
 .formGroup {

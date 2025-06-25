@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import styles from "./CheckInForm.module.css";
 
-const CheckInForm = () => {
+const CheckInForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     purpose: "",
     deliveryId: "",
@@ -40,6 +40,7 @@ const CheckInForm = () => {
         }
       );
       alert("Check-in submitted successfully");
+      if (onSuccess) onSuccess(); // Auto-refresh and switch
     } catch (error) {
       alert(error.response?.data?.msg || "Check-in failed");
     }
