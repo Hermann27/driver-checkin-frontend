@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./LoginPage.module.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const LoginPage = ({ onLogin }) => {
@@ -56,7 +57,7 @@ const LoginPage = ({ onLogin }) => {
 
   return (
     <div className={styles.loginContainer}>
-      <h2 className={styles.loginTitle}>Driver Login</h2>
+      <h2 className={styles.loginTitle}>Login Page </h2>
       <form onSubmit={handleSubmit} noValidate>
         <div className={styles.formGroup}>
           <label className={styles.label}>Email</label>
@@ -87,6 +88,12 @@ const LoginPage = ({ onLogin }) => {
         <button className={styles.button} type="submit" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
+        <p className={styles.registerPrompt}>
+          Don't have an account?{" "}
+          <Link to="/register" className={styles.registerLink}>
+            Register here
+          </Link>
+        </p>
       </form>
     </div>
   );

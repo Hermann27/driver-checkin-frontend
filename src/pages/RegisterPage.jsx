@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./RegisterPage.module.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const RegisterPage = () => {
@@ -90,141 +91,167 @@ const RegisterPage = () => {
     <div className={styles.formContainer}>
       <h2 className={styles.formTitle}>Driver Registration</h2>
       <form onSubmit={handleSubmit} noValidate>
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="name">
-            Name
-          </label>
-          <input
-            className={styles.input}
-            id="name"
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
-        </div>
+        <div className={styles.formGrid}>
+          <div className={styles.field}>
+            {" "}
+            {/* Name */}
+            <label className={styles.label} htmlFor="name">
+              Name
+            </label>
+            <input
+              className={styles.input}
+              id="name"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            {errors.name && (
+              <p className={styles.errorMessage}>{errors.name}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={styles.input}
-            id="email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && (
-            <p className={styles.errorMessage}>{errors.email}</p>
-          )}
-        </div>
+          <div className={styles.field}>
+            {" "}
+            {/* Email */}
+            <label className={styles.label} htmlFor="email">
+              Email
+            </label>
+            <input
+              className={styles.input}
+              id="email"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {errors.email && (
+              <p className={styles.errorMessage}>{errors.email}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="password">
-            Password
-          </label>
-          <input
-            className={styles.input}
-            id="password"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          {errors.password && (
-            <p className={styles.errorMessage}>{errors.password}</p>
-          )}
-        </div>
+          <div className={styles.field}>
+            {" "}
+            {/* Password */}
+            <label className={styles.label} htmlFor="password">
+              Password
+            </label>
+            <input
+              className={styles.input}
+              id="password"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            {errors.password && (
+              <p className={styles.errorMessage}>{errors.password}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="licensePlate">
-            License Plate
-          </label>
-          <input
-            className={styles.input}
-            id="licensePlate"
-            type="text"
-            name="licensePlate"
-            value={formData.licensePlate}
-            onChange={handleChange}
-          />
-          {errors.licensePlate && (
-            <p className={styles.errorMessage}>{errors.licensePlate}</p>
-          )}
-        </div>
+          <div className={styles.field}>
+            {" "}
+            {/* License Plate */}
+            <label className={styles.label} htmlFor="licensePlate">
+              License Plate
+            </label>
+            <input
+              className={styles.input}
+              id="licensePlate"
+              type="text"
+              name="licensePlate"
+              value={formData.licensePlate}
+              onChange={handleChange}
+            />
+            {errors.licensePlate && (
+              <p className={styles.errorMessage}>{errors.licensePlate}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="company">
-            Company
-          </label>
-          <input
-            className={styles.input}
-            id="company"
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-          />
-          {errors.company && (
-            <p className={styles.errorMessage}>{errors.company}</p>
-          )}
-        </div>
+          <div className={styles.field}>
+            {" "}
+            {/* Company */}
+            <label className={styles.label} htmlFor="company">
+              Company
+            </label>
+            <input
+              className={styles.input}
+              id="company"
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+            />
+            {errors.company && (
+              <p className={styles.errorMessage}>{errors.company}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="phoneNumber">
-            Phone Number
-          </label>
-          <input
-            className={styles.input}
-            id="phoneNumber"
-            type="text"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-          />
-          {errors.phoneNumber && (
-            <p className={styles.errorMessage}>{errors.phoneNumber}</p>
-          )}
-        </div>
+          <div className={styles.field}>
+            {" "}
+            {/* Phone Number */}
+            <label className={styles.label} htmlFor="phoneNumber">
+              Phone Number
+            </label>
+            <input
+              className={styles.input}
+              id="phoneNumber"
+              type="text"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+            />
+            {errors.phoneNumber && (
+              <p className={styles.errorMessage}>{errors.phoneNumber}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="driverLicensePhoto">
-            Driver License Photo
-          </label>
-          <input
-            className={styles.inputFile}
-            id="driverLicensePhoto"
-            type="file"
-            name="driverLicensePhoto"
-            onChange={handleFileChange}
-          />
-          {errors.driverLicensePhoto && (
-            <p className={styles.errorMessage}>{errors.driverLicensePhoto}</p>
-          )}
-        </div>
+          <div className={styles.field}>
+            {" "}
+            {/* License Photo */}
+            <label className={styles.label} htmlFor="driverLicensePhoto">
+              Driver License Photo
+            </label>
+            <input
+              className={styles.inputFile}
+              id="driverLicensePhoto"
+              type="file"
+              name="driverLicensePhoto"
+              onChange={handleFileChange}
+            />
+            {errors.driverLicensePhoto && (
+              <p className={styles.errorMessage}>{errors.driverLicensePhoto}</p>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="driverPicture">
-            Driver Picture
-          </label>
-          <input
-            className={styles.inputFile}
-            id="driverPicture"
-            type="file"
-            name="driverPicture"
-            onChange={handleFileChange}
-          />
-          {errors.driverPicture && (
-            <p className={styles.errorMessage}>{errors.driverPicture}</p>
-          )}
+          <div className={styles.field}>
+            {" "}
+            {/* Driver Picture */}
+            <label className={styles.label} htmlFor="driverPicture">
+              Driver Picture
+            </label>
+            <input
+              className={styles.inputFile}
+              id="driverPicture"
+              type="file"
+              name="driverPicture"
+              onChange={handleFileChange}
+            />
+            {errors.driverPicture && (
+              <p className={styles.errorMessage}>{errors.driverPicture}</p>
+            )}
+          </div>
         </div>
 
         <button className={styles.button} type="submit">
           Register
         </button>
+        <p className={styles.backLink}>
+          Already have an account?{" "}
+          <Link to="/login" className={styles.registerLink}>
+            Login here
+          </Link>
+        </p>
       </form>
 
       {message && (
